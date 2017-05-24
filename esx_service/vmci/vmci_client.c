@@ -374,3 +374,15 @@ Vmci_FreeBuf(be_answer *ans)
          ans->buf = NULL;
    }
 }
+
+int main() {
+      be_sock_status status;
+      be_sock_id id;
+      status = vsock_init(&id, ESX_VMCI_CID, 1019);
+      if (status == CONN_FAILURE) {
+            printf("failure\n");
+      } else {
+            printf("success\n");
+      }
+      return 0;
+}
