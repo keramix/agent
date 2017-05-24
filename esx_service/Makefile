@@ -28,10 +28,7 @@ BIN := ../build
 # most recent tag. Tagged builds use the externally defined version,
 # developer builds use last tagged release and sha1 of the most recent commit.
 # Format: <last tagged release>.<last commit hash>
-PKG_VERSION ?= $(shell \
-	       git describe --tags `git rev-list --tags --max-count=1` \
-	       ).$(shell \
-	       git log --pretty=format:'%h' -n 1)
+PKG_VERSION ?= 0.1
 
 # Release version needed for vib
 RELEASE_VERSION ?= 0.0.1
