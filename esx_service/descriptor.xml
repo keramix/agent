@@ -1,0 +1,79 @@
+<!--
+# Copyright 2016 VMware, Inc. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+ -->
+
+<!--  VIB descriptor.xml. Used to generate installable VIBs  -->
+<!--  Content is expected in payloads/vmdkops (see <payloads>) -->
+
+
+<vib version="6.0">
+
+   <name>esx-vmdkops-service</name>
+   <version>1.0.0-0.0.1</version>
+   <vendor>VMWare</vendor>
+   <summary>ESX-side daemon supporting basic VMDK operations requested by a guest</summary>
+
+   <description>
+   Executes VMDK operations requested by an in-the-guest application.
+   </description>
+
+   <payloads>
+     <payload name="vmdkops" type="vgz">
+     </payload> 
+   </payloads>
+   
+   
+   <!-- Used for specifying KB article URLs. -->
+   <urls></urls>
+
+   <!-- defines a VIB's relationships with other VIBs -->
+   <relationships>
+      <depends>
+         <constraint name="esx-version" relation="&gt;=" version="6.0.0" />
+      </depends>
+      <conflicts></conflicts>
+      <replaces></replaces>
+      <provides> </provides>
+      <compatibleWith />
+   </relationships>
+
+   <software-tags />
+
+   <!-- System installation requirements -->
+   <system-requires>
+      <maintenance-mode>false</maintenance-mode>
+   </system-requires>
+
+   <!-- VIB acceptance level.  Should be one of -->
+   <!-- certified / accepted / partner / community -->
+   <!-- Defaults to community if not specified    -->
+   <acceptance-level>accepted</acceptance-level>
+
+   <!-- Both live install and live removes must be true for a live upgrade -->
+   <live-install-allowed>true</live-install-allowed>
+   <live-remove-allowed>true</live-remove-allowed>
+
+   <cimom-restart>false</cimom-restart>
+
+   <!-- Mark this VIB as stateless ready - meaning that this VIB can be booted
+        from a stateless host and its configuration has a host profiles plugin.
+        Defaults to false.  -->
+   <stateless-ready>false</stateless-ready>
+
+   <!-- This VIB overlays files of other VIBs.  -->
+   <!-- Note that the use of overlays must be approved by VMware via
+        the certification or acceptance programs. -->
+   <overlay>false</overlay>
+</vib>
